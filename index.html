@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FakeStore</title>
+    <title>Hero Store</title>
     <link rel="stylesheet" href="./css/style.css" />
     <!-- Latest compiled and minified CSS -->
     <!-- <link
@@ -19,7 +19,6 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
-
     <!-- google Montserrat  font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,6 +26,11 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awsome -->
+    <script
+      src="https://kit.fontawesome.com/cb438fe300.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -69,7 +73,7 @@
               <tbody>
                 <tr>
                   <th>Total Added-Products:</th>
-                  <td><span id="total-Products">0</span></td>
+                  <td>&nbsp&nbsp&nbsp<span id="total-Products">0</span></td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -99,7 +103,14 @@
               </tbody>
             </table>
             <div class="parces text-center">
-              <button class="btn btn-primary text-center">Buy Now</button>
+              <button
+                class="btn btn-primary text-center"
+                data-bs-toggle="modal"
+                data-bs-target="#modal"
+                onclick="buyButton()"
+              >
+                Buy Now
+              </button>
             </div>
           </div>
         </div>
@@ -114,7 +125,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="modal-info">Confirm</h5>
+                <h5 class="modal-title" id="modal-info">Description</h5>
                 <button
                   type="button"
                   class="btn-close"
@@ -130,6 +141,15 @@
                   data-bs-dismiss="modal"
                 >
                   Close
+                </button>
+                <button
+                  type="button"
+                  id="continue-button"
+                  class="btn btn-success"
+                  data-bs-dismiss="modal"
+                  onclick="console.log('Confirmed')"
+                >
+                  Continue
                 </button>
               </div>
             </div>
